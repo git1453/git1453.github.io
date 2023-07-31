@@ -1,0 +1,607 @@
+<!DOCTYPE html><html><head>
+      <title>git</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\spark\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.8\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="git-cheatsheet-git-%E5%A4%87%E5%BF%98%E5%8D%95">Git Cheatsheet Git &#x5907;&#x5FD8;&#x5355;</h1>
+
+<p>Everything You Need to Know in One Handy Cheatsheet<br>
+&#x60A8;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x90FD;&#x5728;&#x4E00;&#x5F20;&#x65B9;&#x4FBF;&#x7684;&#x5907;&#x5FD8;&#x5355;&#x4E2D;</p>
+<p>Git is a version control system that allows you to track changes to files and folders. It&apos;s a powerful tool that can be used for everything from small personal projects to large-scale enterprise applications.<br>
+Git &#x662F;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;&#xFF0C;&#x5141;&#x8BB8;&#x60A8;&#x8DDF;&#x8E2A;&#x5BF9;&#x6587;&#x4EF6;&#x548C;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x66F4;&#x6539;&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x4ECE;&#x5C0F;&#x578B;&#x4E2A;&#x4EBA;&#x9879;&#x76EE;&#x5230;&#x5927;&#x578B;&#x4F01;&#x4E1A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x3002;</p>
+<p>This guide is a quick reference to the most common Git commands. It&apos;s not meant to be a comprehensive guide to Git, but rather a quick reference to the most common commands.<br>
+&#x672C;&#x6307;&#x5357;&#x662F;&#x5BF9;&#x6700;&#x5E38;&#x89C1; Git &#x547D;&#x4EE4;&#x7684;&#x5FEB;&#x901F;&#x53C2;&#x8003;&#x3002;&#x5B83;&#x4E0D;&#x662F; Git &#x7684;&#x7EFC;&#x5408;&#x6307;&#x5357;&#xFF0C;&#x800C;&#x662F;&#x5BF9;&#x6700;&#x5E38;&#x89C1;&#x547D;&#x4EE4;&#x7684;&#x5FEB;&#x901F;&#x53C2;&#x8003;&#x3002;</p>
+<p>Here&apos;s the revised git cheatsheet with improved section titles and reorganized:<br>
+&#x4EE5;&#x4E0B;&#x662F;&#x4FEE;&#x8BA2;&#x540E;&#x7684; git &#x5907;&#x5FD8;&#x5355;&#xFF0C;&#x6539;&#x8FDB;&#x4E86;&#x7AE0;&#x8282;&#x6807;&#x9898;&#x5E76;&#x8FDB;&#x884C;&#x4E86;&#x91CD;&#x65B0;&#x7EC4;&#x7EC7;&#xFF1A;</p>
+<h2 class="mume-header" id="setup-and-configuration-%E8%AE%BE%E7%BD%AE%E5%92%8C%E9%85%8D%E7%BD%AE">Setup and Configuration &#x8BBE;&#x7F6E;&#x548C;&#x914D;&#x7F6E;</h2>
+
+<pre data-role="codeBlock" data-info="git" class="language-git"><span class="token comment"># Initialize a new Git repository</span>
+git init
+<span class="token comment"># Clone and create a local copy of a remote repository</span>
+git clone &lt;url&gt;
+<span class="token comment"># Configure global Git settings</span>
+git config --global &lt;setting_name&gt; &lt;value&gt;
+<span class="token comment"># Configure local Git settings for a specific repo</span>
+git config --local &lt;setting_name&gt; &lt;value&gt;
+
+<span class="token comment"># --------------- Advanced ------------------</span>
+
+<span class="token comment"># Show a summary of your Git configuration settings</span>
+git config --list
+<span class="token comment"># Set a custom text editor for Git messages</span>
+git config --global core.editor <span class="token string">&quot;&lt;editor_command&gt;&quot;</span>
+<span class="token comment"># Create a Git command alias</span>
+git config --global alias.&lt;shortcut&gt; &lt;command&gt;
+<span class="token comment"># Enable automatic colorization of Git output</span>
+git config --global color.ui auto
+<span class="token comment"># Cache Git credentials for a certain amount of time</span>
+git config --global credential.helper <span class="token string">&apos;cache --timeout=&lt;seconds&gt;&apos;</span>
+<span class="token comment"># Configure git to detect specific types of whitespace errors</span>
+git config --global core.whitespace &lt;options&gt;
+<span class="token comment"># Automatically prune remote-tracking branches when fetching updates</span>
+git config --global fetch.prune true
+<span class="token comment"># Set a custom diff tool for Git</span>
+git config --global diff.tool &lt;tool&gt;
+<span class="token comment"># Set a custom merge tool for Git</span>
+git config --global merge.tool &lt;tool&gt;
+<span class="token comment"># Compare changes using a custom diff tool</span>
+git difftool
+<span class="token comment"># Resolve merge conflicts with a custom merge tool</span>
+git mergetool
+</pre><h2 class="mume-header" id="file-operations-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C">File Operations &#x6587;&#x4EF6;&#x64CD;&#x4F5C;</h2>
+
+<pre data-role="codeBlock" data-info="git" class="language-git"><span class="token comment"># Show working tree status</span>
+git status
+<span class="token comment"># Add files to the staging area</span>
+git add &lt;file(s)&gt;
+<span class="token comment"># Remove files from working tree and staging area</span>
+git rm &lt;file(s)&gt;
+<span class="token comment"># Move or rename a file</span>
+git mv &lt;old_file&gt; &lt;new_file&gt;
+<span class="token comment"># Commit changes with a message</span>
+git commit -m <span class="token string">&quot;commit message&quot;</span>
+<span class="token comment"># Show differences between working tree and last commit</span>
+git diff
+
+<span class="token comment"># --------------- Advanced ------------------</span>
+
+<span class="token comment"># Assume a tracked file is unchanged</span>
+git update-index --assume-unchanged &lt;file&gt;
+<span class="token comment"># Restore normal behavior of tracking changes</span>
+git update-index --no-assume-unchanged &lt;file&gt;
+<span class="token comment"># Show differences between two commits</span>
+git diff &lt;commit_id1&gt;..&lt;commit_id2&gt;
+<span class="token comment"># Unstage a file, but keep in the working directory</span>
+git rm --cached &lt;file_name&gt;
+</pre><h2 class="mume-header" id="branching-and-merging-%E5%88%86%E6%94%AF%E5%92%8C%E5%90%88%E5%B9%B6">Branching and Merging &#x5206;&#x652F;&#x548C;&#x5408;&#x5E76;</h2>
+
+<pre data-role="codeBlock" data-info="git" class="language-git"><span class="token comment"># List all branches</span>
+git branch
+<span class="token comment"># Create a new branch</span>
+git branch &lt;branch_name&gt;
+<span class="token comment"># Switch to a specific branch</span>
+git checkout &lt;branch_name&gt;
+<span class="token comment"># Merge a branch into the current branch</span>
+git merge &lt;branch_name&gt;
+<span class="token comment"># Delete a specific branch</span>
+git branch -d &lt;branch_name&gt;
+<span class="token comment"># List all remote branches</span>
+git branch -r
+
+<span class="token comment"># --------------- Advanced ------------------</span>
+
+<span class="token comment"># List branches with additional information</span>
+git branch -vv
+<span class="token comment"># Create a new branch based on a remote branch</span>
+git checkout -b &lt;branch_name&gt; &lt;remote_name&gt;/&lt;remote_branch&gt;
+<span class="token comment"># Cancel merge in case of conflicts</span>
+git merge --abort
+<span class="token comment"># Rebase the current branch onto another branch</span>
+git rebase &lt;branch_name&gt;
+<span class="token comment"># Cancel an ongoing rebase operation</span>
+git rebase --abort
+<span class="token comment"># Interactive rebase for edit, squash, re-order or drop commits</span>
+git rebase -i
+<span class="token comment"># Rebase commits in the current branch onto a remote branch interactively</span>
+git rebase -i &lt;remote_name&gt;/&lt;remote_branch&gt;
+</pre><h2 class="mume-header" id="remote-repositories-%E8%BF%9C%E7%A8%8B%E5%AD%98%E5%82%A8%E5%BA%93">Remote Repositories &#x8FDC;&#x7A0B;&#x5B58;&#x50A8;&#x5E93;</h2>
+
+<pre data-role="codeBlock" data-info="git" class="language-git"><span class="token comment"># List remote repositories</span>
+git remote
+<span class="token comment"># Add a remote repository</span>
+git remote add &lt;name&gt; &lt;url&gt;
+<span class="token comment"># Fetch from a remote repository</span>
+git fetch &lt;remote_name&gt;
+<span class="token comment"># Pull changes from a remote branch</span>
+git pull &lt;remote_name&gt; &lt;remote_branch&gt;
+<span class="token comment"># Push changes to a remote repository</span>
+git push &lt;remote_name&gt; &lt;local_branch&gt;
+<span class="token comment"># Remove a remote repository</span>
+git remote rm &lt;remote_name&gt;
+<span class="token comment"># Display information about a specific remote repository</span>
+git remote show &lt;remote_name&gt;
+<span class="token comment"># Show the tracking branches for remote repositories</span>
+git remote show &lt;remote_name&gt; --verbose
+
+<span class="token comment"># --------------- Advanced -------------------</span>
+
+<span class="token comment"># Fetch updates from all remote repositories</span>
+git remote update
+<span class="token comment"># Force-push changes to a remote repository, overwriting remote history</span>
+git push --force &lt;remote_name&gt; &lt;local_branch&gt;
+<span class="token comment"># Push all tags to a remote repository</span>
+git push --tags &lt;remote_name&gt;
+<span class="token comment"># Rename a remote repository</span>
+git remote rename &lt;old_name&gt; &lt;new_name&gt;
+<span class="token comment"># Change the URL of a remote repository</span>
+git remote set-url &lt;name&gt; &lt;new_url&gt;
+<span class="token comment"># Remove stale remote-tracking branches</span>
+git remote prune &lt;remote_name&gt;
+<span class="token comment"># List all remote branches that have been merged into the current branch</span>
+git branch -r --merged
+<span class="token comment"># List all remote branches not yet merged into the current branch</span>
+git branch -r --no-merged
+<span class="token comment"># Fetch updates from a remote repository and prune obsolete remote-tracking branches</span>
+git fetch -p
+
+<span class="token comment"># Track a remote branch and set up the local branch to automatically sync with it</span>
+git branch --track &lt;branch_name&gt; &lt;remote_name&gt;/&lt;remote_branch&gt;
+<span class="token comment"># Set an existing local branch to track a remote branch</span>
+git branch -u &lt;remote_name&gt;/&lt;remote_branch&gt;
+<span class="token comment"># Push a branch to a remote repository and set it to track the remote branch</span>
+git push -u &lt;remote_name&gt; &lt;local_branch&gt;
+<span class="token comment"># Remove the tracking association between a local and a remote branch</span>
+git branch --unset-upstream &lt;branch_name&gt;
+</pre><h2 class="mume-header" id="commit-history-%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95">Commit History &#x63D0;&#x4EA4;&#x5386;&#x53F2;&#x8BB0;&#x5F55;</h2>
+
+<pre data-role="codeBlock" data-info="git" class="language-git"><span class="token comment"># Show commit history</span>
+git log
+<span class="token comment"># Display a condensed commit history</span>
+git log --oneline
+<span class="token comment"># Show branching commit history</span>
+git log --graph
+<span class="token comment"># Filter commit history by author</span>
+git log --author=&lt;author_name&gt;
+<span class="token comment"># Show commit history since specific date</span>
+git log --since=&lt;date&gt;
+<span class="token comment"># Show commit history until specific date</span>
+git log --until=&lt;date&gt;
+</pre><h2 class="mume-header" id="tags-%E6%A0%87%E7%AD%BE">Tags &#x6807;&#x7B7E;</h2>
+
+<pre data-role="codeBlock" data-info="git" class="language-git"><span class="token comment"># List all tags</span>
+git tag
+<span class="token comment"># Create a new tag at a specific commit</span>
+git tag &lt;tag_name&gt; &lt;commit_id&gt;
+<span class="token comment"># Create an annotated tag with a message</span>
+git tag -a &lt;tag_name&gt; -m <span class="token string">&quot;tag message&quot;</span>
+<span class="token comment"># Delete a specific tag</span>
+git tag -d &lt;tag_name&gt;
+<span class="token comment"># Delete a specific remote tag</span>
+git push &lt;remote_name&gt; --delete &lt;tag_name&gt;
+<span class="token comment"># Show information about a specific tag</span>
+git show &lt;tag_name&gt;
+</pre><h2 class="mume-header" id="stashes-%E8%97%8F%E5%8C%BF%E5%A4%84">Stashes &#x85CF;&#x533F;&#x5904;</h2>
+
+<pre data-role="codeBlock" data-info="git" class="language-git"><span class="token comment"># Temporarily save changes in the working tree</span>
+git stash save <span class="token string">&quot;stash message&quot;</span>
+<span class="token comment"># List all stashes</span>
+git stash list
+<span class="token comment"># Apply changes from a specific stash</span>
+git stash apply &lt;stash&gt;
+<span class="token comment"># Remove a specific stash</span>
+git stash drop &lt;stash&gt;
+<span class="token comment"># Remove all stashes</span>
+git stash clear
+</pre><h2 class="mume-header" id="cherry-picking-%E6%A8%B1%E6%A1%83%E9%87%87%E6%91%98">Cherry-Picking &#x6A31;&#x6843;&#x91C7;&#x6458;</h2>
+
+<pre data-role="codeBlock" data-info="git" class="language-git"><span class="token comment"># Apply a specific commit from one branch to another</span>
+git cherry-pick &lt;commit_id&gt;
+</pre><h2 class="mume-header" id="commit-management-%E6%8F%90%E4%BA%A4%E7%AE%A1%E7%90%86">Commit Management &#x63D0;&#x4EA4;&#x7BA1;&#x7406;</h2>
+
+<h1 class="mume-header" id="modify-the-latest-commit">Modify the latest commit</h1>
+
+<p>git commit --amend</p>
+<h1 class="mume-header" id="create-a-new-commit-that-undoes-changes-from-a-previous-commit">Create a new commit that undoes changes from a previous commit</h1>
+
+<p>git revert &lt;commit_id&gt;</p>
+<h1 class="mume-header" id="discard-changes-and-move-head-to-a-specific-commit">Discard changes and move HEAD to a specific commit</h1>
+
+<p>git reset --hard &lt;commit_id&gt;</p>
+<h1 class="mume-header" id="move-head-to-a-specific-commit-but-preserve-staged-changes">Move HEAD to a specific commit, but preserve staged changes</h1>
+
+<p>git reset --soft &lt;commit_id&gt;</p>
+<h1 class="mume-header" id="show-a-record-of-all-changes-made-to-the-local-repository-head">Show a record of all changes made to the local repository head</h1>
+
+<p>git reflog<br>
+Submodules, Subtrees, and Advanced Submodules<br>
+&#x5B50;&#x6A21;&#x5757;&#x3001;&#x5B50;&#x6811;&#x548C;&#x9AD8;&#x7EA7;&#x5B50;&#x6A21;&#x5757;</p>
+<h1 class="mume-header" id="add-a-submodule-to-the-current-repository">Add a submodule to the current repository</h1>
+
+<p>git submodule add &lt;repository_url&gt; <path></path></p>
+<h1 class="mume-header" id="initialize-and-update-all-submodules-recursively">Initialize and update all submodules recursively</h1>
+
+<p>git submodule update --init --recursive</p>
+<h1 class="mume-header" id="add-a-subtree-to-the-current-repository">Add a subtree to the current repository</h1>
+
+<p>git subtree add --prefix=<path> &lt;repository_url&gt;</path></p>
+<h1 class="mume-header" id="initialize-the-submodules-in-the-repository">Initialize the submodules in the repository</h1>
+
+<p>git submodule init</p>
+<h1 class="mume-header" id="update-the-submodules-to-their-latest-commits">Update the submodules to their latest commits</h1>
+
+<p>git submodule update</p>
+<h1 class="mume-header" id="execute-a-specific-command-in-each-submodule">Execute a specific command in each submodule</h1>
+
+<p>git submodule foreach <command></p>
+<h1 class="mume-header" id="unregister-a-submodule">Unregister a submodule</h1>
+
+<p>git submodule deinit <path><br>
+Hooks and Automation, and Diff and Merge Tools<br>
+&#x6302;&#x94A9;&#x548C;&#x81EA;&#x52A8;&#x5316;&#xFF0C;&#x4EE5;&#x53CA;&#x6BD4;&#x8F83;&#x548C;&#x5408;&#x5E76;&#x5DE5;&#x5177;</path></p>
+<h1 class="mume-header" id="locate-hooks-directory-in-the-git-repository-usually-in-githooks">Locate hooks directory in the Git repository (usually in .git/hooks/)</h1>
+
+<p>git hooks</p>
+<h1 class="mume-header" id="script-names-for-specific-hooks-that-can-be-added-to-the-hooks-directory">Script names for specific hooks that can be added to the hooks directory</h1>
+
+<p>pre-commit, post-commit, pre-push, post-merge, etc.</p>
+<h1 class="mume-header" id="make-a-hook-script-executable-to-ensure-its-triggered-when-necessary">Make a hook script executable to ensure it&apos;s triggered when necessary</h1>
+
+<p>chmod +x &lt;hook_script&gt;<br>
+Work with Patches &#x4F7F;&#x7528;&#x8865;&#x4E01;</p>
+<h1 class="mume-header" id="generate-a-patch-file-for-a-specific-commit">Generate a patch file for a specific commit</h1>
+
+<p>git format-patch &lt;commit_id&gt;</p>
+<h1 class="mume-header" id="apply-a-patch-to-the-current-branch">Apply a patch to the current branch</h1>
+
+<p>git apply &lt;patch_file&gt;</p>
+<h1 class="mume-header" id="apply-a-patch-using-the-git-am-apply-mailbox-command">Apply a patch using the &quot;git am&quot; (apply mailbox) command</h1>
+
+<p>git am &lt;patch_file&gt;<br>
+Collaboration &#x534F;&#x4F5C;</p>
+<h1 class="mume-header" id="generate-a-request-pull-summary-with-the-changes-between-two-commits">Generate a request-pull summary with the changes between two commits</h1>
+
+<p>git request-pull &lt;start_commit&gt; &lt;end_commit&gt; <url></url></p>
+<h1 class="mume-header" id="summarize-the-commit-history-listing-authors-and-their-contributions">Summarize the commit history, listing authors and their contributions</h1>
+
+<p>git shortlog</p>
+<h1 class="mume-header" id="list-all-files-tracked-by-git">List all files tracked by Git</h1>
+
+<p>git ls-files</p>
+<h1 class="mume-header" id="search-for-a-specified-pattern-in-files-tracked-by-git">Search for a specified pattern in files tracked by Git</h1>
+
+<p>git grep <pattern><br>
+Bisecting, Debugging, and Performance Issues<br>
+&#x5E73;&#x5206;&#x3001;&#x8C03;&#x8BD5;&#x548C;&#x6027;&#x80FD;&#x95EE;&#x9898;</pattern></p>
+<h1 class="mume-header" id="begin-a-bisect-session-to-find-the-commit-that-introduced-a-bug">Begin a bisect session to find the commit that introduced a bug</h1>
+
+<p>git bisect start</p>
+<h1 class="mume-header" id="mark-a-commit-as-bad-indicating-it-contains-the-bug">Mark a commit as &quot;bad,&quot; indicating it contains the bug</h1>
+
+<p>git bisect bad &lt;commit_id&gt;</p>
+<h1 class="mume-header" id="mark-a-commit-as-good-indicating-it-does-not-contain-the-bug">Mark a commit as &quot;good,&quot; indicating it does not contain the bug</h1>
+
+<p>git bisect good &lt;commit_id&gt;</p>
+<h1 class="mume-header" id="end-the-bisect-session-and-return-to-the-original-branchcommit">End the bisect session and return to the original branch/commit</h1>
+
+<p>git bisect reset</p>
+<h1 class="mume-header" id="verify-the-integrity-of-the-git-repository">Verify the integrity of the Git repository</h1>
+
+<p>git fsck</p>
+<h1 class="mume-header" id="run-garbage-collection-to-optimize-the-repositorys-performance">Run garbage collection to optimize the repository&apos;s performance</h1>
+
+<p>git gc</p>
+<h1 class="mume-header" id="remove-untracked-files-and-directories-use-with-caution">Remove untracked files and directories (use with caution)</h1>
+
+<p>git clean -df<br>
+Tips and Tricks &#x63D0;&#x793A;&#x548C;&#x6280;&#x5DE7;</p>
+<h1 class="mume-header" id="interactively-choose-parts-hunks-of-files-to-stage">Interactively choose parts (hunks) of files to stage</h1>
+
+<p>git add -p</p>
+<h1 class="mume-header" id="show-the-commit-history-and-associated-patches-for-a-specific-file">Show the commit history and associated patches for a specific file</h1>
+
+<p>git log -p &lt;file_name&gt;</p>
+<h1 class="mume-header" id="customize-the-format-of-the-git-log-output">Customize the format of the git log output</h1>
+
+<p>git log --pretty=format:&quot;%h - %an, %ar : %s&quot;</p>
+<h1 class="mume-header" id="find-text-in-commit-messages-useful-for-locating-specific-changes">Find text in commit messages (useful for locating specific changes)</h1>
+
+<p>git log --grep=&quot;<text>&quot;</text></p>
+<h1 class="mume-header" id="quickly-view-the-changes-in-the-working-directory-since-the-last-commit">Quickly view the changes in the working directory since the last commit</h1>
+
+<p>git diff --stat</p>
+<h1 class="mume-header" id="display-the-branch-history-with-decoration-to-see-where-branches-have-split-or-merged">Display the branch history with decoration to see where branches have split or merged</h1>
+
+<p>git log --oneline --decorate --graph</p>
+<h1 class="mume-header" id="stash-changes-in-the-working-tree-including-untracked-files">Stash changes in the working tree, including untracked files</h1>
+
+<p>git stash save -u</p>
+<h1 class="mume-header" id="create-an-empty-commit-useful-while-testing-branch-protection-rules">Create an empty commit, useful while testing branch protection rules</h1>
+
+<p>git commit --allow-empty -m &quot;Empty commit message&quot;</p>
+<h1 class="mume-header" id="set-the-git-output-pager-to-quit-when-the-output-is-less-than-one-screen-and-not-clear-the-screen-after-displaying">Set the git output pager to quit when the output is less than one screen, and not clear the screen after displaying</h1>
+
+<p>git config --global core.pager &apos;less -RFX&apos;</p>
+<h1 class="mume-header" id="use-gits-auto-correct-feature-to-fix-mistyped-commands">Use Git&apos;s auto-correct feature to fix mistyped commands</h1>
+
+<p>git config --global help.autocorrect 1</p>
+<h1 class="mume-header" id="list-aliases-for-git-commands">List aliases for Git commands</h1>
+
+<p>git config --get-regexp alias</p>
+<h1 class="mume-header" id="perform-a-dry-run-of-merging-without-actually-merging-branches">Perform a dry run of merging without actually merging branches</h1>
+
+<p>git merge --no-commit --no-ff &lt;branch_name&gt;</p>
+<h1 class="mume-header" id="show-a-tree-like-representation-of-the-repos-structure">Show a tree-like representation of the repo&apos;s structure</h1>
+
+<p>git ls-tree --name-only -r -t HEAD</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
